@@ -10,7 +10,9 @@ const GuestList = props => {
                     <Guest  key={index} 
                             name={guest.name} 
                             isConfirmed={guest.isConfirmed}
-                            handleConfirmation={() => props.toggleConfirmationAt(index)} />
+                            isEditting={guest.isEditting}
+                            handleConfirmation={() => props.toggleConfirmationAt(index)}
+                            handleToggleEditting={() => props.toggleEdittingAt(index)} />
                 )
             }
         </ul>
@@ -19,7 +21,8 @@ const GuestList = props => {
 
 GuestList.propTypes = {
     guests: PropTypes.array.isRequired,
-    toggleConfirmationAt: PropTypes.func.isRequired
+    toggleConfirmationAt: PropTypes.func.isRequired,
+    toggleEdittingAt: PropTypes.func.isRequired
 }
 
 export default GuestList;
